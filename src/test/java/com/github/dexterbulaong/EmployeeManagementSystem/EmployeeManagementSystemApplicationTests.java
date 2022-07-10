@@ -1,4 +1,4 @@
-package com.gihub.dexterbulaong.EmployeeManagementSystem;
+package com.github.dexterbulaong.EmployeeManagementSystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

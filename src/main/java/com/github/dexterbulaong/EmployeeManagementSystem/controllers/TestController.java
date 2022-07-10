@@ -1,4 +1,4 @@
-package com.gihub.dexterbulaong.EmployeeManagementSystem.controllers;
+package com.github.dexterbulaong.EmployeeManagementSystem.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

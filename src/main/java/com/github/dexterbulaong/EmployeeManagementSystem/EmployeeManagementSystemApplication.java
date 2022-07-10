@@ -1,4 +1,4 @@
-package com.gihub.dexterbulaong.EmployeeManagementSystem;
+package com.github.dexterbulaong.EmployeeManagementSystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
