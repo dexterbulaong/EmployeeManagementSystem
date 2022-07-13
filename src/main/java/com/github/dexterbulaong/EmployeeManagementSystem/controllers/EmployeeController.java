@@ -5,8 +5,7 @@ import com.github.dexterbulaong.EmployeeManagementSystem.service.EmployeeService
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +29,42 @@ public class EmployeeController {
 
         return "employee/list-employees";
 
+    }
+
+    @GetMapping("/showFormForAdd")
+    public String showForm(Model theModel) {
+
+        Employee theEmployee = new Employee();
+
+        theModel.addAttribute("employee", theEmployee);
+
+        return "employee/employee-form";
+    }
+
+    @PostMapping("/save")
+    public String saveForm(@ModelAttribute("employee") Employee theEmployee) {
+
+        employeeService.save(theEmployee);
+
+        return "redirect:/employees/list";
+    }
+
+    @GetMapping("/update")
+    public String updateForm(@RequestParam("employeeId") int id, Model model) {
+
+        Employee employee = employeeService.findById(id);
+
+        model.addAttribute("employee", employee);
+
+        return "employee/employee-form";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("employeeId") int id) {
+
+        employeeService.deleteById(id);
+
+        return "redirect:/employees/list";
     }
 
 }
